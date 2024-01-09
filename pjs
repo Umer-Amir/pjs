@@ -1,0 +1,159 @@
+// Q1
+function small(arr){
+    let smallest = arr[0]
+
+    for (let index = 1; index < arr.length; index++) {
+        if(smallest > arr[index]){
+            smallest = arr[index];
+        }
+        return smallest
+    }
+}
+
+// console.log(small([3,-1,5,2,0,9]))
+// Output: -1
+
+// Q2
+function findFirstOccurrenceOfLargest(arr) {
+    if (!arr.length) {
+       return -1;
+    }
+   
+    let largest = arr[0];
+    let firstOccurrence = 0;
+   
+    for (let i = 1; i < arr.length; i++) {
+       if (arr[i] > largest) {
+         largest = arr[i];
+         firstOccurrence = i;
+       }
+    }
+   
+    return firstOccurrence;
+   }
+   
+   // Example usage:
+//    console.log(findFirstOccurrenceOfLargest([6, 1, 2, 5, 5, 5])); // Output: 3
+//    console.log(findFirstOccurrenceOfLargest([2, 2, 2, 2])); // Output: 0
+//    console.log(findFirstOccurrenceOfLargest([1])); // Output: 0
+//    console.log(findFirstOccurrenceOfLargest([])); // Output: -1
+
+   // Q3
+
+   function lastsmallest(arr){
+    let smallest = arr[0]
+    occur = 0
+    for(let i=1;i<arr.length;i++){
+        if(arr[i] <= smallest ){
+            smallest = arr[i]
+            occur = i
+        }
+
+   }
+   return occur
+}
+//    console.log(lastsmallest([6,1,2,5,1])); // Output: 3
+//    console.log(lastsmallest([2, 2, 2, 2])); // Output: 0
+
+   //Q4
+   function longestWord(str) {
+    let words = str.split(" ");
+    let longest = "";
+  
+    for (let i = 0;i<words.length;i++) {
+      if (words[i].length > longest.length) {
+        longest = words[i];
+      }
+    }
+  
+    return longest;
+  }
+  
+//   console.log(longestWord("hello baba sadadas aaaaaaaaaaa 1234567890"));
+
+//   Q5
+function findFirstRepeatingTerm(sequence) {
+    const seen = new Set();
+    for (const term of sequence) {
+      if (seen.has(term)) {
+        return term;
+      }
+      seen.add(term);
+    }
+    return undefined;
+  }
+  
+  // Example usage:
+  const sequence = [1,3,2, 2, 3, 4, 2, 5, 3,3,6];
+  const firstRepeating = findFirstRepeatingTerm(sequence);
+//   console.log(firstRepeating); // Output: 2
+
+//   Q6
+// function reverseString(str) {
+//     return str.split("").reverse().join("");
+//   }
+  
+  // Example usage:
+//   const inputString = "Hello, World!";
+//   const reversed = reverseString(inputString);
+//   console.log(reversed); // Output: "!dlroW ,olleH"
+
+
+
+// Q7
+
+function even(arr){
+    newarr =[]
+    let j =0
+    for(i=0;i<arr.length;i++){
+        if(arr[i] % 2 == 0){
+            newarr[j] =arr[i]
+            j++
+    }
+    
+}
+    return newarr
+}
+// console.log(even([0,1,2,5,6,3,4]))
+
+// Q8
+
+// Q9
+function isPrime(number) {
+    if (number <= 1) {
+      return false;
+    }
+    for (let i = 2; i <= Math.sqrt(number); i++) {
+      if (number % i === 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+  
+  // Example usage:
+  const num = 999;
+  console.log(isPrime(num)); // Output: true
+ 
+//   Q10
+function factorial(n) {
+    if (n === 0) {
+      return 1;
+    }
+    return n * factorial(n - 1);
+  }
+  
+  // Example usage:
+  const number = 5;
+  const result = factorial(number);
+  console.log(result); // Output: 120 (5! = 5 x 4 x 3 x 2 x 1 = 120)
+
+  // palindrome
+  function isPalindrome(str) {
+    str = str.toLowerCase();
+    let reversedStr = str.split('').reverse().join('');
+    return str === reversedStr;
+   }
+   
+   console.log(isPalindrome("Madam")); // Output: true
+   console.log(isPalindrome("Hello")); // Output: false
